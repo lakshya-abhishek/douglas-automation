@@ -1,0 +1,38 @@
+{
+  "highlights": [
+    {
+      "name": "Sale",
+      "enabled": true
+    },
+    {
+      "name": "Neu",
+      "enabled": true
+    },
+    {
+      "name": "Limitiert",
+      "enabled": true
+    }
+  ],
+  "categories": {
+    "marke": {
+      "label": "Marke",
+      "testBrands": [
+        "First available"
+      ]
+    },
+    "produktart": {
+      "label": "Produktart",
+      "testTypes": [
+        "First available"
+      ]
+    },
+    "geschenkFur": {
+      "label": "Geschenk für",
+      "enabled": false
+    },
+    "furWen": {
+      "label": "Für Wen",
+      "enabled": false
+    }
+  }
+}

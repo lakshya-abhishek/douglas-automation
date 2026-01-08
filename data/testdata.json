@@ -1,0 +1,18 @@
+{
+  "urls": {
+    "base": "https://www.douglas.de",
+    "homepage": "/de",
+    "parfum": "/de/c/parfum"
+  },
+  "selectors": {
+    "cookieAccept": "button:has-text(\"Alle akzeptieren\"), button:has-text(\"Accept\")",
+    "parfumLink": "a[href*=\"parfum\"], a:has-text(\"Parfum\")",
+    "productTile": "[data-testid=\"product-tile\"], .product-item, .product",
+    "filterOption": "[data-testid=\"filter-option\"], .facet-option"
+  },
+  "waits": {
+    "short": 1000,
+    "medium": 2000,
+    "long": 5000
+  }
+}
