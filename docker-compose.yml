@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  playwright-tests:
+    build: .
+    volumes:
+      - ./playwright-report:/app/playwright-report
+      - ./test-results:/app/test-results
+    environment:
+      - BASE_URL=https://www.douglas.de
+      - LOCALE=de
+      - HEADLESS=true

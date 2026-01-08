@@ -9,3 +9,6 @@ allure-report/
 .DS_Store
 screenshots/
 videos/
+logs/
+package-lock.json
+.playwright/

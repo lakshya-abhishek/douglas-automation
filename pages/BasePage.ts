@@ -23,6 +23,7 @@ export class BasePage {
     return await this.page.locator(selector).textContent() || '';
   }
 
+  // Check if element is visible within timeout
   async isElementVisible(selector: string, timeout = 5000): Promise<boolean> {
     try {
       await this.page.waitForSelector(selector, { timeout, state: 'visible' });
