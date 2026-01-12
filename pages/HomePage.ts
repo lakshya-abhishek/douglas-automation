@@ -17,14 +17,23 @@ export class HomePage extends BasePage {
 
   async acceptCookies() {
     const cookieButton = this.page.locator(this.cookieAcceptButton).first();
-    if (await cookieButton.isVisible({ timeout: 5000 })) {
+    
+    try {
+      // Wait for cookie button to appear
+      await cookieButton.waitFor({ state: 'visible', timeout: 10000 });
+      
+      // Click it
       await cookieButton.click();
-      await this.page.waitForTimeout(testData.waits.short);
+      
+      // Wait for it to disappear
+      await cookieButton.waitFor({ state: 'hidden', timeout: 5000 });
+    } catch {
+      console.log('Cookie banner not detected');
     }
   }
 
   async goToParfum() {
     await this.page.locator(this.parfumLink).first().click();
-    await this.page.waitForLoadState('networkidle');
+    await this.page.waitForLoadState('domcontentloaded');
   }
 }

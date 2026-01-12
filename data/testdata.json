@@ -5,7 +5,7 @@
     "parfum": "/de/c/parfum"
   },
   "selectors": {
-    "cookieAccept": "button:has-text(\"Alle akzeptieren\"), button:has-text(\"Accept\")",
+    "cookieAccept": "button:has-text(\"ALLE ERLAUBEN\"), button:has-text(\"ALLOW EVERYONE\")",
     "parfumLink": "a[href*=\"parfum\"], a:has-text(\"Parfum\")",
     "productTile": "[data-testid=\"product-tile\"], .product-item, .product",
     "filterOption": "[data-testid=\"filter-option\"], .facet-option"

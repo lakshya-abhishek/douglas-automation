@@ -8,9 +8,9 @@ test.describe('Douglas Parfum Basic Tests', () => {
 
     await homePage.navigate();
     await homePage.acceptCookies();
-    await expect(page).toHaveTitle(/Douglas/);
+    await expect(page).toHaveTitle(/Online-Parfümerie ✔️ Parfum & Kosmetik kaufen | DOUGLAS/);
 
-    await homePage.goToParfum();
+    await homePage.goToParfum();    
     await expect(page).toHaveURL(/parfum/);
   });
 
