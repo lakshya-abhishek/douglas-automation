@@ -25,6 +25,7 @@ douglas-automation/
 ├── pages/              # Page object classes
 ├── utils/              # Helper utilities and config
 ├── data/               # Test data JSON files
+├── documents/          # Documents to understand and execute tests
 ├── .github/workflows/  # CI/CD pipeline
 ├── playwright.config.ts
 └── package.json
