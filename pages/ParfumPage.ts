@@ -11,9 +11,10 @@ export class ParfumPage extends BasePage {
   }
 
   async applyFilter(filterName: string) {
-    const filter = this.page.locator(`text=/^${filterName}$/`).first();
+    const filter = this.page.locator(`text=${filterName}`).first();
     await filter.click();
-    await this.page.waitForTimeout(testData.waits.medium);
+    //await this.page.waitForTimeout(testData.waits.medium);
+    await this.page.waitForLoadState('load');
   }
 
   async expandFilterSection(sectionName: string) {
