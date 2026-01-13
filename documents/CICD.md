@@ -51,7 +51,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-repo/douglas-automation.git'
+                git 'https://github.com/lakshya-abhishek/douglas-automation.git'
             }
         }
 

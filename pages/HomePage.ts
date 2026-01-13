@@ -19,13 +19,8 @@ export class HomePage extends BasePage {
     const cookieButton = this.page.locator(this.cookieAcceptButton).first();
     
     try {
-      // Wait for cookie button to appear
       await cookieButton.waitFor({ state: 'visible', timeout: 10000 });
-      
-      // Click it
-      await cookieButton.click();
-      
-      // Wait for it to disappear
+      await cookieButton.click();      
       await cookieButton.waitFor({ state: 'hidden', timeout: 5000 });
     } catch {
       console.log('Cookie banner not detected');

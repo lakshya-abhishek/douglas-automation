@@ -1,6 +1,7 @@
 import { Page } from '@playwright/test';
 import { BasePage } from './BasePage';
 import testData from '../data/testdata.json';
+import { expect } from '@playwright/test';
 
 export class ParfumPage extends BasePage {
   private productTiles = testData.selectors.productTile;
@@ -13,20 +14,20 @@ export class ParfumPage extends BasePage {
   async applyFilter(filterName: string) {
     const filter = this.page.locator(`text=${filterName}`).first();
     await filter.click();
-    //await this.page.waitForTimeout(testData.waits.medium);
     await this.page.waitForLoadState('load');
   }
 
   async expandFilterSection(sectionName: string) {
     const section = this.page.locator(`text=/^${sectionName}$/`).first();
     await section.click();
-    await this.page.waitForTimeout(testData.waits.short);
+    const option = this.page.locator(this.filterOption).first();
+    await option.waitFor({ state: 'visible', timeout: testData.waits.medium });
   }
 
   async selectFirstFilterOption() {
     const option = this.page.locator(this.filterOption).first();
     await option.click();
-    await this.page.waitForTimeout(testData.waits.medium);
+    await expect(this.page.locator('[data-testid="product-tile"]').first()).toBeVisible();
   }
 
   async getProductCount(): Promise<number> {

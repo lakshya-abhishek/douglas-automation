@@ -22,11 +22,9 @@ export default defineConfig({
   },
 
   projects: [
-    // Chrome Stealth
     {
       name: 'chrome-stealth',
-      use: { 
-        //...devices['Desktop Chrome'],
+      use: {
         channel: 'chrome', 
         headless: false,
         viewport: null, 
