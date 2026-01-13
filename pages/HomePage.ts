@@ -6,6 +6,8 @@ import testData from '../data/testdata.json';
 export class HomePage extends BasePage {
   private cookieAcceptButton = testData.selectors.cookieAccept;
   private parfumLink = testData.selectors.parfumLink;
+  private expectedTitle = testData.expectedData.homePageTitle;
+  private parfumURL = testData.urls.parfum;
 
   constructor(page: Page) {
     super(page);
@@ -30,5 +32,13 @@ export class HomePage extends BasePage {
   async goToParfum() {
     await this.page.locator(this.parfumLink).first().click();
     await this.page.waitForLoadState('domcontentloaded');
+  }
+
+  async verifyHomePageTitle() {
+    await this.verifyTitle(this.expectedTitle);
+  }
+
+  async verifyParfumPageLoaded() {
+    await this.verifyURL(this.parfumURL);
   }
 }

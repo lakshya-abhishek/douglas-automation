@@ -9,5 +9,8 @@
     "parfumLink": "a[href*=\"parfum\"], a:has-text(\"Parfum\")",
     "productTile": "[data-testid=\"product-tile\"], .product-item, .product",
     "filterOption": "[data-testid=\"filter-option\"], .facet-option"
+  },
+  "expectedData": {
+    "homePageTitle": "Online-Parfümerie ✔️ Parfum & Kosmetik kaufen | DOUGLAS"
   }
 }

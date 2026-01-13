@@ -1,4 +1,4 @@
-import { Page } from '@playwright/test';
+import { Page, expect } from '@playwright/test';
 
 export class BasePage {
   readonly page: Page;
@@ -30,5 +30,13 @@ export class BasePage {
     } catch {
       return false;
     }
+  }
+
+  async verifyURL(expectedURL: string) {
+    await expect(this.page).toHaveURL(new RegExp(expectedURL));
+  }
+
+  async verifyTitle(expectedTitle: string) {
+    await expect(this.page).toHaveTitle(new RegExp(expectedTitle));
   }
 }

@@ -16,6 +16,7 @@ test.describe('Douglas Parfum Data-Driven Filter Tests', () => {
     await homePage.navigate();
     await homePage.acceptCookies();
     await homePage.goToParfum();
+    await parfumPage.verifyParfumPageURL();
     logger.info('Test setup completed');
   });
 

@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test } from '@playwright/test';
 import { HomePage } from '../pages/HomePage';
 
 test.describe('Douglas Parfum Basic Tests', () => {
@@ -8,10 +8,10 @@ test.describe('Douglas Parfum Basic Tests', () => {
 
     await homePage.navigate();
     await homePage.acceptCookies();
-    await expect(page).toHaveTitle(/Online-Parfümerie ✔️ Parfum & Kosmetik kaufen | DOUGLAS/);
+    await homePage.verifyHomePageTitle();
 
-    await homePage.goToParfum();    
-    await expect(page).toHaveURL(/parfum/);
+    await homePage.goToParfum();
+    await homePage.verifyParfumPageLoaded();
   });
 
 });
